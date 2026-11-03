@@ -1,0 +1,26 @@
+{
+ "rules": {
+  "rooms": {
+   "$room": {
+    "meta": {
+     ".read": "auth != null",
+     ".write": "auth != null && ((!data.exists() && newData.child('hostUid').val() === auth.uid) || (data.child('hostUid').val() === auth.uid))"
+    },
+    "public": {
+     ".read": "auth != null",
+     ".write": "auth != null && root.child('rooms').child($room).child('meta').child('hostUid').val() === auth.uid"
+    },
+    "private": {
+     ".read": "auth != null && root.child('rooms').child($room).child('meta').child('hostUid').val() === auth.uid",
+     ".write": "auth != null && root.child('rooms').child($room).child('meta').child('hostUid').val() === auth.uid"
+    },
+    "players": {
+     ".read": "auth != null",
+     "$uid": {
+      ".write": "auth != null && auth.uid === $uid && root.child('rooms').child($room).child('meta').exists() && newData.child('uid').val() === auth.uid && newData.child('name').isString() && newData.child('name').val().length <= 24 && newData.child('seat').isNumber() && newData.child('seat').val() >= 0 && newData.child('seat').val() <= 2"
+     }
+    }
+   }
+  }
+ }
+}
