@@ -1,0 +1,14 @@
+BIBLE WHEEL: SPINNING WHEEL UPDATE
+
+1. In your existing GitHub Bible repository, upload these FOUR files to the root folder, replacing existing files with the same names:
+   display.html
+   display.js
+   host.js
+   style.css
+2. Commit changes directly to main. GitHub Pages will redeploy automatically (allow a minute or two).
+3. Hard-refresh the host and display pages (Ctrl+Shift+R on Windows). On Pixel, close and reopen the display tab or use a fresh private tab.
+4. Create or resume a room, publish a puzzle, then press Spin wheel. The wheel should rotate to the selected value and stop under the pointer.
+
+DO NOT overwrite firebase-config.js, firebase.js, database rules, puzzles.js, or any other existing files. Your Firebase configuration stays untouched.
+
+NOTE: This is a source-code update, not an APK. The animation is driven by the same Firebase public state as the host controls. It has been syntax-checked, but cross-device gameplay must be tested on your live deployment.
