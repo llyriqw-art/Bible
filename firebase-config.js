@@ -1,5 +1,5 @@
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: "AIzaSyBouC0snF9QZHLgjyiorJNbl01Sw5BW1Ss",
   authDomain: "bible-wheel.firebaseapp.com",
   databaseURL: "https://bible-wheel-default-rtdb.firebaseio.com",
