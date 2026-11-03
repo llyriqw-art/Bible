@@ -9,9 +9,9 @@
 4. Open **Project settings → General → Your apps**, register a **Web app**, and copy the Firebase configuration values into `firebase-config.js`. For `databaseURL`, use the exact URL displayed under Realtime Database (it may contain a regional suffix).
 5. Under Authentication → Settings → Authorized domains, add your exact GitHub Pages host (usually `YOURNAME.github.io`) if it is not already authorized.
 
-## 2 — Publish for free with GitHub Pages
-1. Open https://github.com/ and create a public repository named `bible-wheel`.
-2. Upload the contents of this ZIP's `bible-wheel-online` folder into the repository **root** (not inside an extra folder).
+## 2 — Update your existing GitHub Pages website
+1. Open your existing GitHub repository at https://github.com/llyriqw-art/Bible .
+2. Upload the contents of this ZIP into the repository **root** (not inside an extra folder). **Do not overwrite your existing `firebase-config.js`**, which already contains your project configuration.
 3. In **Settings → Pages**, choose **Deploy from a branch**, branch `main`, folder `/ (root)`, then save.
 4. GitHub will provide a URL such as `https://YOURNAME.github.io/bible-wheel/`. Open it and choose **Host a game**.
 
@@ -32,6 +32,9 @@
 ## Security and limitations
 - Firebase rules prevent contestants from writing game scores or reading the host's private room node. The host's anonymous login is device/browser-specific; clearing site data or changing browsers may prevent resuming that room. Keep the host browser open.
 - **Important:** The included starter puzzle bank is a JavaScript file on the public static website. Anyone who deliberately opens that source file can read the default answers, scriptures, and hints. For true answer secrecy, replace the starter puzzle bank with puzzles entered only through a private authenticated host workflow and stored server-side. Do not use this demo for sensitive data.
-- Contestant seat selection is client-side and is not fully race-safe when multiple people join at the exact same time. Players can see the display but submit spoken guesses to the host; there are no remote spin/guess buttons in this version.
+- Contestant seats are reserved through Firebase transactions to avoid two players claiming the same seat. Players can see the display but submit spoken guesses to the host; there are no remote spin/guess buttons in this version.
 - This is a working starter implementation **not yet tested end-to-end on your devices**. Hosting is free within Firebase and GitHub limits, which can change. Do not enable billing unless you decide to.
 - Wheel visuals are original game-show-inspired styling, not copied Wheel of Fortune artwork.
+
+## Existing setup (November 2026)
+Your GitHub repository already has `firebase-config.js` configured. This update ZIP intentionally does **not** include that file so you do not lose your existing settings. Keep Firebase Realtime Database rules locked until the new website files are uploaded, Anonymous Authentication is enabled, and the matching rules are ready to publish.
