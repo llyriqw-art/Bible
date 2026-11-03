@@ -1,5 +1,5 @@
 export const firebaseConfig = {
-  apiKey: "AIzaSyBouC0snF9QZHLgjyiorJNb10lSw5BW1Ss",
+  apiKey: "AIzaSyBouC0snF9QZHLgjyiorJNbl01Sw5BW1Ss",
   authDomain: "bible-wheel.firebaseapp.com",
   databaseURL: "https://bible-wheel-default-rtdb.firebaseio.com",
   projectId: "bible-wheel",
